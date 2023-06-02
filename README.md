@@ -28,8 +28,6 @@ With Aquasense, you no longer have to wonder if your municipality has resolved i
 
 * **Volunteer and Donation Opportunities:** Provide information about local organizations or initiatives that are actively involved in water conservation projects. Users can explore volunteering opportunities or donate to support these initiatives.
 
-* **Multilingual Support:** Offer support for multiple languages to ensure inclusivity and accessibility for a diverse range of users, allowing them to access information and resources in their preferred language.
-
 
 ## Screenshots
 
