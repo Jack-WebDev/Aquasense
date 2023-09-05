@@ -1,0 +1,68 @@
+
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    paths-ignore:
+      - ".vscode/**"
+      - "**/*.md"
+
+jobs:
+  # Build primes out Turbo build cache and pnpm cache
+  build:
+    name: "Build: ${{ matrix.os }}"
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 3
+    strategy:
+      matrix:
+        OS: [ubuntu-latest, windows-latest, macos-latest]
+        NODE_VERSION: [18]
+      fail-fast: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup node@${{ matrix.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: npm install
+
+
+  test:
+    name: "Test: ${{ matrix.os }} (node@${{ matrix.NODE_VERSION }})"
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    needs: build
+    strategy:
+      matrix:
+        OS: [ubuntu-latest]
+        NODE_VERSION: [18, 20]
+        include:
+          - os: macos-latest
+            NODE_VERSION: 18
+          - os: windows-latest
+            NODE_VERSION: 18
+      fail-fast: false
+    env:
+      NODE_VERSION: ${{ matrix.NODE_VERSION }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup node@${{ matrix.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Test
+        run: npm run test
