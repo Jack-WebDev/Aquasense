@@ -16,8 +16,6 @@ With Aquasense, you no longer have to wonder if your municipality has resolved i
 
 * **Water Quality Monitoring:** Provide real-time data and information on the quality of local water sources, including rivers, lakes, and groundwater. Users can access water quality reports, view historical data, and understand the impact on their communities.
 
-* **Interactive Water Footprint Calculator:** Enable users to calculate their individual or household water footprint based on their water consumption patterns. The calculator could provide personalized recommendations for reducing water usage and improving efficiency.
-
 * **Community Forum:** Foster a community-driven platform where users can engage in discussions, share experiences, and exchange ideas on water-related topics. Users can seek advice, share success stories, and collaborate on local water conservation initiatives.
 
 * **Water-related News and Updates:** Curate and provide up-to-date news articles, blog posts, and research findings related to water conservation, sustainable practices, and environmental initiatives. This keeps users informed about the latest developments and trends in the water sector.
