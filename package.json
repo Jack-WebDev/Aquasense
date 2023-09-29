@@ -4,8 +4,10 @@
   "description": "Connecting Communities with Sustainable Water Solutions",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node backend/index.js", 
+    "server": "nodemon backend/index.js",
+    "client":"npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,7 @@
   },
   "homepage": "https://github.com/Jack-WebDev/Aquasense#readme",
   "devDependencies": {
+    "concurrently": "^8.2.1",
     "nodemon": "^3.0.1"
   },
   "dependencies": {
